@@ -13,7 +13,7 @@ set $mod Mod4
 hide_edge_borders both
 for_window [class="^.*"] border pixel 1
 
-exec_always xsetroot -bg 000000
+exec_always xsetroot -solid "#000000"
 
 # Scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -40,6 +40,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+#IDEA
+bindsym $mod+i exec /home/e254f80d/Programming/Tools/idea-IC-173.3737.127/bin/idea.sh
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -51,8 +54,8 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Sound
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% && killall -SIGUSR1 i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% && killall -SIGUSR1 i3status
 
 # change focus
 bindsym $mod+j focus left
